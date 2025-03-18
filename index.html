@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Instagramフォローバック確認</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="header">Instagramフォローバック確認</h1>
+        <p id="description">このサイトではインスタグラムでフォローされていない人、フォローしていない人を調べることができます。</p>
+        <a id="btnInstructions" href="guide.html"><p id="btnInstructions">使い方</p></a>
+        <input type="file" id="fileInput" accept=".zip" />
+        <button id="btnFindUnfollowers" onclick="processFiles()">フォローされていない人を探す</button>
+        <button id="btnFindNonFollowing" onclick="processFilesReverse()">フォローしていない人を探す</button>
+        <div id="result"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.9.1/dist/jszip.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const translations = {
+            ja: {
+                title: "インスタグラムフォローバック確認",
+                header: "インスタグラムフォローバック確認",
+                description: "このサイトではインスタグラムでフォローされていない人、フォローしていない人を調べることができます。",
+                btnFindUnfollowers: "フォローされていない人を探す",
+                btnFindNonFollowing: "フォローしていない人を探す",
+                btnInstructions:"使い方"
+            },
+            en: {
+                title: "Instagram Follow-back Checker",
+                header: "Instagram Follow-back Checker",
+                description: "This site allows you to check who hasn't followed you back or whom you haven't followed back on Instagram.",
+                btnFindUnfollowers: "Find who hasn't followed back",
+                btnFindNonFollowing: "Find who you haven't followed back",
+                btnInstructions:"How to use"
+            }
+        };
+        
+        function setLanguage() {
+            const userLang = navigator.language.startsWith("ja") ? "ja" : "en";
+            document.getElementById("title").textContent = translations[userLang].title;
+            document.getElementById("header").textContent = translations[userLang].header;
+            document.getElementById("description").textContent = translations[userLang].description;
+            document.getElementById("btnFindUnfollowers").textContent = translations[userLang].btnFindUnfollowers;
+            document.getElementById("btnFindNonFollowing").textContent = translations[userLang].btnFindNonFollowing;
+            document.getElementById("btnInstructions").textContent = translations[userLang].btnInstructions;
+        }
+        
+        setLanguage();
+    </script>
+</body>
+</html>

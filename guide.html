@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Instagram Data Download</title>
+    <style>
+        :root {
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+            --card-bg: #fff;
+            --button-bg: #007bff;
+            --button-hover-bg: #0056b3;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #121212;
+                --text-color: #e0e0e0;
+                --card-bg: #1e1e1e;
+                --button-bg: #3b82f6;
+                --button-hover-bg: #2563eb;
+                --shadow: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1,
+        p {
+            text-align: center;
+        }
+
+        .instructions {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px var(--shadow);
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        ul {
+            padding: 0;
+            text-align: center;
+        }
+
+        li {
+            list-style-position: inside;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 id="header">Instagramデータのダウンロード方法</h1>
+        <div class="instructions">
+            <p id="intro">Instagramからデータをダウンロードするには、以下の手順に従ってください。</p>
+            <br>
+            <ol>
+                <li id="step1">Instagramにログインし、右上の ☰ をクリックします。</li>
+                <li id="step2">一番上の「アカウントセンター」タブに移動します。</li>
+                <br>
+                <img id="img1"src="images/j1.jpeg" width="300">
+                <li id="step3">「あなたの情報とアクセス許可」タブに移動します。</li>
+                <br>
+                <img id="img2"src="images/j2.jpeg" width="300">
+                <li id="step4">「個人のデータをダウンロード」タブに移動します。</li>
+                <br>
+                <img id="img3"src="images/j3.jpeg" width="300">
+                <li id="step5">「情報をダウンロードまたは転送」を選択します。</li>
+                <br>
+                <img id="img4"src="images/j4.jpeg" width="300">
+                <li id="step6">「どこから情報を取得しますか？」という画面になるので自分が調べたいアカウントを選択し、「次へ」をクリックします。</li>
+                <br>
+                <img id="img5"src="images/j5.jpeg" width="300">
+                <li id="step7">「どの程度の情報が必要ですか？」と聞かれます。ここではフォローフォロワーの情報のみ必要なので情報の一部をクリックします。</li>
+                <br>
+                <img id="img6"src="images/j6.jpeg" width="300">
+                <li id="step8">スクロールするとつながりの項目があるので、「フォロワーとフォロー」にチェックし、次へをクリックします。</li>
+                <br>
+                <img id="img7"src="images/j7.jpeg" width="300">
+                <li id="step9">「情報をどのように利用しますか？」と聞かれるのでデバイスにダウンロードを選択します。</li>
+                <br>
+                <img id="img8"src="images/j8.jpeg" width="300">
+                <li id="step10">必要な期間を選択したら、ファイルを作成をクリックします。</li>
+                <br>
+                <img id="img9"src="images/j9.jpeg" width="300">
+                <li id="step11">ファイルの準備が完了すると、メールとInstagramのお知らせが届きます。<br>アカウントセンターまたはInstagram
+                    の設定の[個人データをダウンロード]ページにある[利用可能なダウンロード]セクションから情報をダウンロードできます。</li>
+                <br>
+                <img id="img10"src="images/j10.jpeg" width="300">
+                <li id="step12">ダウンロードしたZIPファイルを本サイトでアップロードするとで調べることができます。</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // Language detection and switching logic
+        const userLang = navigator.language || navigator.userLanguage;
+        const isEnglish = userLang.includes('en');
+
+        if (isEnglish) {
+            document.documentElement.lang = 'en';
+            document.getElementById('page-title').innerText = 'Instagram Data Download';
+            document.getElementById('header').innerText = 'How to Download Instagram Data';
+            document.getElementById('intro').innerText = 'Follow the steps below to download data from Instagram.';
+            document.getElementById('step1').innerText = 'Log into Instagram and click the ☰ icon in the top-right corner.';
+            document.getElementById('step2').innerText = 'Go to the "Account Center" tab at the top.';
+            document.getElementById('step3').innerText = 'Go to the "Your Information and Permissions" tab.';
+            document.getElementById('step4').innerText = 'Go to the "Download Your information" tab.';
+            document.getElementById('step5').innerText = 'Select "Download or Transfer Information."';
+            document.getElementById('step6').innerText = 'Select the account from which you want to retrieve data and click "Next."';
+            document.getElementById('step7').innerText = 'You will be asked "How much information do you want?" Here, since you only need follower/following information, click on part of the information.';
+            document.getElementById('step8').innerText = 'Scroll down to find the "Connections" section, check "Followers and Following," and click "Next.';
+            document.getElementById('step9').innerText = 'You will be asked, "What do you want to do with your information?" Select "Download to Device.';
+            document.getElementById('step10').innerText = 'After selecting the required period, click "Create File.';
+            document.getElementById('step11').innerText = 'Once the file is ready, you will receive an email and a notification from Instagram. You can download the information from the "Available Downloads" section on the Account Center or the "Download Personal Data" page in Instagram settings.';
+            document.getElementById('step12').innerText = 'You can upload the downloaded ZIP file on this site to investigate.';
+
+            
+
+
+
+            document.getElementById("img1").src = "images/e1.jpg";
+            document.getElementById("img2").src = "images/e2.jpg";
+            document.getElementById("img3").src = "images/e3.jpg";
+            document.getElementById("img4").src = "images/e4.jpg";
+            document.getElementById("img5").src = "images/e5.jpg";
+            document.getElementById("img6").src = "images/e6.jpg";
+            document.getElementById("img7").src = "images/e7.jpg";
+            document.getElementById("img8").src = "images/e8.jpg";
+            document.getElementById("img9").src = "images/e9.jpg";
+            document.getElementById("img10").src = "images/e10.jpg";
+        
+        }
+    </script>
+
+</body>
+
+</html>
